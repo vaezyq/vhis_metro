@@ -4,6 +4,11 @@
 
 ###################  starring配置  ###################
 starring:
+  basic:
+    enable: true
+    username: MIT
+    password: 111111
+
   swagger-open: true #是否开启swagger (true/false)
   kaptcha-open: false #是否开启登录时验证码 (true/false)
   session-open: true #是否开启session超时验证（受影响的类SessionTimeoutInterceptor） (true/false)
@@ -30,6 +35,9 @@ management:
   security:
     enabled: false  #是否拦截监控安全配置项路径
 
+
+##########################################################
+###################  kafka配置  ###################
 ###################  spring配置  ###################
 spring:
   jpa:
@@ -42,22 +50,30 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
+  kafka:
+    producer:
+      bootstrap-servers: 47.100.176.192:9092
+      group-id: "default_consumer_group"
+    consumer:
+      bootstrap-servers: 47.100.176.192:9092
+      group-id: "default_consumer_group"
+
   # ehcache 配置
   cache:
     ehcache:
       config: classpath:ehcache.xml
-#  redis:
-#    host: localhost
-#    port: 6379
-#    password:
-#      pool:
-#        max-active: 8
-#        max-wait: -1
-#        max-idle: 8
-#        min-idle: 0
-#        timeout: 0
+  #  redis:
+  #    host: localhost
+  #    port: 6379
+  #    password:
+  #      pool:
+  #        max-active: 8
+  #        max-wait: -1
+  #        max-idle: 8
+  #        min-idle: 0
+  #        timeout: 0
   profiles:
-     active: dev
+    active: dev
   # active: produce
   mvc:
     favicon:
@@ -87,13 +103,13 @@ spring:
 spring:
   profiles: dev
   datasource:
-      driver-class-name: com.mysql.jdbc.Driver
-      type: com.alibaba.druid.pool.DruidDataSource
-      url: jdbc:mysql://10.176.25.26:3306/mit_vhis?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
-      #xiugai url: jdbc:mysql://192.168.0.122:3306/mit_vhis?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
-      username: root
-      password: 123456
-      filters: log4j,wall,mergeStat
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://10.176.25.26:3306/mit_vhis?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    #xiugai url: jdbc:mysql://192.168.0.122:3306/mit_vhis?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    username: root
+    password: 123456
+    filters: log4j,wall,mergeStat
 logging:
   level.root: info
   level.com.rootgroup: debug
@@ -109,3 +125,4 @@ logging:
   level.com.rootgroup: debug
   path: logs/
   file: starring.log
+

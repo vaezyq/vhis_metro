@@ -35,6 +35,5 @@ public class StarringApplication extends WebMvcConfigurerAdapter {
 	public static void main(String[] args) {
 		SpringApplication.run(StarringApplication.class, args);
 		logger.info("StarringApplication is success!");
-
 	}
 }

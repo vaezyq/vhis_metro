@@ -10,22 +10,26 @@ import static java.lang.Thread.sleep;
 public class test {
 
     public static void main(String[] args) throws InterruptedException {
-        while(true){
-            sleep(1000);
-            Clickhouse object = new Clickhouse();
-            object.handle02();
-        }
+//        while(true){
+//            sleep(1000);
+//            Clickhouse object = new Clickhouse();
+//            object.handle02();
+//        }
 
-//        String sql = "select * from line_content";
+//        String sql = "select top 3 * from traincard";
+//        String sql = "select top 1 * from traincard where lineNum='da-lian-jin-pu-xian'";
+        String sql = "select * from line_content";
+//        String sql = "select distinct trainNum from traincard where lineNum='da-lian-jin-pu-xian' order by collect_time asc";
+//        select distinct project from
 //        String sql = "select * from Content_02 where lineNum='line01'";
 //          String sql = "select * from line_content where lineNum='12'";
 //        String sql = "select top 13 * from train12_content order by insert_time desc";
 
 //        String sql = "select train_num from line_content where lineNum='12'";
-//          List<Map<String,String>> result = Clickhouse.exeSql(sql);
+          List<Map<String,String>> result = Clickhouse.exeSql(sql);
 //        String ans = "lineNum :" + result.get(0).get("lineNum");
         //System.out.println(result.get(0));
-//          System.out.println(result);
+          System.out.println(result);
     }
 
 }

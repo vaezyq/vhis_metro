@@ -54,6 +54,7 @@ public class DBUtil {
         System.out.println("dbutil-------52hang");
         //拿到索引ip
         String ip = consistentHashRouter.routeNode(tid).getKey();
+//        String ip = "10.176.25.26";
         String tablename1="train"+tid+"_data_latest1";
         String tablename2="train"+tid+"_data_latest2";
         String tablename3="train"+tid+"_data_latest3";

@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <option name="USE_RELEASE_OPTION" value="false" />
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -17,7 +18,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="vhis_metro_console" options="-verbose -bootclasspath /Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home/jre/lib/jce.jar -extdirs $PROJECT_DIR$/libs" />
+      <module name="vhis_metro_console" options="-verbose -bootclasspath $PROJECT_DIR$/../../../software/JDK1.8/jre/lib/rt.jar;$PROJECT_DIR$/../../../software/JDK1.8/jre/lib/jce.jar -extdirs &quot;E:\project\Java project\mit_backend/libs&quot;" />
     </option>
   </component>
 </project>
